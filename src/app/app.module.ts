@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import { AppComponent } from './app.component';
 
 import { RouterModule, Routes} from '@angular/router';
@@ -9,6 +9,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 
 import {FormsModule} from '@angular/forms';
 import {HomeComponent} from './components/home/home.component';
+import { NousaiderComponent } from './components/nousaider/nousaider.component';
+import { GallerieComponent } from './components/gallerie/gallerie.component';
 
 const appRoutes: Routes = [
   {
@@ -19,6 +21,14 @@ const appRoutes: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'nousaider',
+    component: NousaiderComponent
+  },
+  {
+    path: 'gallerie',
+    component: GallerieComponent
   }
 ];
 
@@ -28,7 +38,8 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     NavbarComponent,
-
+    NousaiderComponent,
+    GallerieComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +47,9 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule
   ],
+
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],

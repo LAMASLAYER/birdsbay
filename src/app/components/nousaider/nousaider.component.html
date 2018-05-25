@@ -1,0 +1,13 @@
+
+<div class="container">
+  <a (click)="setBene(true)" style="color:white; font-weight:bold; border:1px white solid; border-radius: 5px; padding:5px;cursor: hand">Devenir bénévole</a>
+  <a (click)="setGive(true)" style="color:white; font-weight:bold; border:1px white solid; border-radius: 5px; padding:5px;cursor: hand">Faire un don</a>
+</div>
+
+<div *ngIf="getBene()" style="color:white">
+  Infos concercnant les bénévoles
+</div>
+
+<div *ngIf="getGive()" style="color:white">
+  Infos concernant les dons
+</div>
